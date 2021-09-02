@@ -1,4 +1,5 @@
 import os
+from message import Message
 
 def print_message_from_file(filename):
     with open(filename, "r") as f_to_read:
@@ -44,6 +45,31 @@ def main():
     print_message_from_file(filename)
 
     print_separator()
+
+    msg = Message("... this is in class.")
+    msg.print_message()
+
+    print_separator()
+
+    print("{}".format(msg))
+
+    print_separator()
+
+    msg_add = msg + " | adding a string"
+    msg_add.print_message()
+
+    print_separator()
+
+    msg2 = Message("... adding a message class")
+    msg_add = msg + msg2
+    msg_add.print_message()
+
+    print_separator()
+    try:
+        num = 6.003432
+        msg_add = msg + num
+    except Exception as e_msg:
+        print("There was an exception {}".format(str(e_msg)))
 
 if __name__ == "__main__":
     main()
