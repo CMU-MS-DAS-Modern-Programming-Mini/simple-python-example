@@ -1,16 +1,43 @@
+"""
+simple-python-example
+
+A program that is meant to be used as an example in class
+"""
 import os
+from message import Message
 
 def print_message_from_file(filename):
-    with open(filename, "r") as f:
-        message = f.read()
+    """
+	Prints a message from contents for a <fieldset>
+
+	Arguments:
+		filename - A string giving the name of the files that is in the current
+		           directory
+
+	Returns:
+	  Returns no value, prints the message to stdout
+	"""
+    with open(filename, "r") as f_to_read:
+        message = f_to_read.read()
         print("This is the message")
         print("{}".format(message))
 
-def print_separator(n=45):
-    print("{}".format("".join(["-" for x in range(0,n)])))
+def print_separator(num_chars=45):
+    """
+    Prints a separator of lines
+
+    Arguments:
+        num_chars: number of hyphens to put in the print_separator
+
+    Returns:
+        No Value, prints the separator to stdout
+    """
+    print("{}".format("".join(["-" for x in range(0, num_chars)])))
 
 def main():
-
+    """
+    The main function that runs the program
+    """
     for i in range(0, 10):
         print("Hello World!#{}".format(i))
 
@@ -24,9 +51,9 @@ def main():
 
     print_separator()
 
-    sample_list_comp = [x for x in range(0,1)]
+    sample_list_comp = [x for x in range(0, 1)]
 
-    for i in sample_list:
+    for i in sample_list_comp:
         print("Hello Comprehension!#{}".format(i))
 
     print_separator()
@@ -34,15 +61,20 @@ def main():
     sample_dictionary = {"english": "hat",
                          "french": "chapeau"}
 
-    for k,v in sample_dictionary.items():
-        print("The word in {} is {}".format(k,v))
+    for k, val in sample_dictionary.items():
+        print("The word in {} is {}".format(k, val))
 
     print_separator()
-    
+
     filename = os.path.join(os.getcwd(), "message.txt")
     print("The File is at {}".format(filename))
 
     print_message_from_file(filename)
+
+    print_separator()
+
+    msg = Message("... this is in class.")
+    msg.print_message()
 
 if __name__ == "__main__":
     main()
