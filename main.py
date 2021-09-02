@@ -8,15 +8,15 @@ from message import Message
 
 def print_message_from_file(filename):
     """
-	Prints a message from contents for a <fieldset>
+    Prints a message from contents for a <fieldset>
 
-	Arguments:
-		filename - A string giving the name of the files that is in the current
-		           directory
+    Arguments:
+            filename - A string giving the name of the files that is in the current
+                       directory
 
-	Returns:
-	  Returns no value, prints the message to stdout
-	"""
+    Returns:
+      Returns no value, prints the message to stdout
+    """
     with open(filename, "r") as f_to_read:
         message = f_to_read.read()
         print("This is the message")
@@ -75,6 +75,29 @@ def main():
 
     msg = Message("... this is in class.")
     msg.print_message()
+
+    print_separator()
+
+    print("{}".format(msg))
+
+    print_separator()
+
+    msg_add = msg + " | adding a string"
+    msg_add.print_message()
+
+    print_separator()
+
+    msg2 = Message("... adding a message class")
+    msg_add = msg + msg2
+    msg_add.print_message()
+
+    print_separator()
+
+    try:
+        num = 6.003432
+        msg_add = msg + num
+    except Exception as e_msg:
+        print("There was an exception {}".format(str(e_msg)))
 
 if __name__ == "__main__":
     main()

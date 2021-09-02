@@ -13,16 +13,16 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
-sys.setrecursionlimit(1500)
+
 
 # -- Project information -----------------------------------------------------
 
-project = 'simple-python-example'
-copyright = '2021, Shawn Brown'
-author = 'Shawn Brown'
+project = 'Simple Python Example'
+copyright = '2021, Shawn T. Brown'
+author = 'Shawn T. Brown'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,10 +31,9 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-        'sphinx.ext.autodoc',
-        'sphinx.ext.napoleon'
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
 ]
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,7 +43,7 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-master_doc = 'index'
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -56,3 +55,7 @@ html_theme = 'classic'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# -- Extension configuration -------------------------------------------------
+autoclass_content = "both"
