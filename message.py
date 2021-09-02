@@ -45,9 +45,10 @@ class Message:
             New Message instance with msg added to the message_string
         """
         if isinstance(msg, str):
-            return Message(self.message_string + msg)
+            r_msg = Message(self.message_string + msg)
         elif isinstance(msg, Message):
-            return Message(self.message_string + msg.message_string)
+            r_msg = Message(self.message_string + msg.message_string)
         else:
             raise TypeError("Class Message does not know how to add" +
                             "a variable of type {}".format(type(msg)))
+        return r_msg

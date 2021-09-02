@@ -93,8 +93,11 @@ def main():
 
     print_separator()
 
-    num = 6.003432
-    msg_add = msg + num
+    try:
+        num = 6.003432
+        msg_add = msg + num
+    except Exception as e_msg:
+        print("There was an exception {}".format(str(e_msg)))
 
 if __name__ == "__main__":
     main()
